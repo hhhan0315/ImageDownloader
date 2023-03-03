@@ -14,5 +14,3 @@ enum ImageLink {
     static let fourth = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQn7sMqOsWkxcFNhvQIvXhDM6gc9wvFOQqvA&usqp=CAU"
     static let fifth = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJusK_J222Oj3WQO4LOVvCHZ-sGS3Czd7upg&usqp=CAU"
 }
-
-// DEVELOP BRANCH
