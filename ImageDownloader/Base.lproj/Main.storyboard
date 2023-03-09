@@ -168,6 +168,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allLoadButton" destination="9Ew-U5-rI3" id="uRq-xA-Axt"/>
                         <outlet property="imageView1" destination="2m9-8d-4p1" id="T0d-ug-D20"/>
                         <outlet property="imageView2" destination="rNA-LY-CHb" id="lMF-XL-bTA"/>
                         <outlet property="imageView3" destination="g2O-u0-Iof" id="cHn-pL-N4D"/>
