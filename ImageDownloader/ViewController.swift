@@ -32,88 +32,87 @@ class ViewController: UIViewController {
     
     private let imageLoader = ImageLoader()
     
+    let queue = OperationQueue()
+    let imageLinks: [String] = [ImageLink.first, ImageLink.second, ImageLink.third, ImageLink.fourth, ImageLink.fifth]
+    lazy var imageViews: [UIImageView] = [imageView1, imageView2, imageView3, imageView4, imageView5]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         allLoadButton.isEnabled = false
         
-        loadButton1.sendActions(for: .touchUpInside)
-        loadButton2.sendActions(for: .touchUpInside)
-        loadButton3.sendActions(for: .touchUpInside)
-        loadButton4.sendActions(for: .touchUpInside)
-        loadButton5.sendActions(for: .touchUpInside)
+//        loadButton1.sendActions(for: .touchUpInside)
+//        loadButton2.sendActions(for: .touchUpInside)
+//        loadButton3.sendActions(for: .touchUpInside)
+//        loadButton4.sendActions(for: .touchUpInside)
+//        loadButton5.sendActions(for: .touchUpInside)
         
-        group.notify(queue: .main) {
-            self.allLoadButton.isEnabled = true
+        for (index, imageLink) in imageLinks.enumerated() {
+            let operation = ImageDownloadOperation(session: URLSession.shared, urlString: imageLink) { data, response, error in
+                guard let data = data else {
+                    return
+                }
+                let imageView = self.imageViews[index]
+                DispatchQueue.main.async {
+                    imageView.image = UIImage(data: data)
+                }
+            }
+            queue.addOperation(operation)
+            
+//            operation.addDependency(<#T##op: Operation##Operation#>)
+            operation.completionBlock = {
+                print("\(index)번째 이미지 로딩 완료")
+            }
         }
     }
     
     @IBAction func loadImageView1(_ sender: UIButton) {
-        imageView1.image = nil
-        group.enter()
-        imageLoader.load(with: ImageLink.first) { [weak self] data in
-            DispatchQueue.main.async {
-                self?.imageView1.image = UIImage(data: data)
+        queue.addOperation {
+            self.imageLoader.load(with: ImageLink.first) { [weak self] data in
+                DispatchQueue.main.async {
+                    self?.imageView1.image = UIImage(data: data)
+                }
             }
-            self?.group.leave()
-//            self?.isLoadSuccess1 = true
-//            self?.checkAllLoadDidEnd()
         }
-        
-        
     }
     
     @IBAction func loadImageView2(_ sender: UIButton) {
-        imageView2.image = nil
-        group.enter()
-        imageLoader.load(with: ImageLink.second) { [weak self] data in
-            DispatchQueue.main.async {
-                self?.imageView2.image = UIImage(data: data)
+        queue.addOperation {
+            self.imageLoader.load(with: ImageLink.second) { [weak self] data in
+                DispatchQueue.main.async {
+                    self?.imageView2.image = UIImage(data: data)
+                }
             }
-            self?.group.leave()
-//            self?.isLoadSuccess2 = true
-//            self?.checkAllLoadDidEnd()
         }
     }
     
     @IBAction func loadImageView3(_ sender: UIButton) {
-        imageView3.image = nil
-        group.enter()
-        DispatchQueue.global().async(group: group) {
+        queue.addOperation {
             self.imageLoader.load(with: ImageLink.third) { [weak self] data in
                 DispatchQueue.main.async {
                     self?.imageView3.image = UIImage(data: data)
                 }
-                self?.group.leave()
-//                self?.isLoadSuccess3 = true
-//                self?.checkAllLoadDidEnd()
             }
         }
     }
     
     @IBAction func loadImageView4(_ sender: UIButton) {
-        imageView4.image = nil
-        group.enter()
-        imageLoader.load(with: ImageLink.fourth) { [weak self] data in
-            DispatchQueue.main.async {
-                self?.imageView4.image = UIImage(data: data)
+        queue.addOperation {
+            self.imageLoader.load(with: ImageLink.fourth) { [weak self] data in
+                DispatchQueue.main.async {
+                    self?.imageView4.image = UIImage(data: data)
+                }
             }
-            self?.group.leave()
-//            self?.isLoadSuccess4 = true
-//            self?.checkAllLoadDidEnd()
         }
     }
     
     @IBAction func loadImageView5(_ sender: UIButton) {
-        imageView5.image = nil
-        group.enter()
-        imageLoader.load(with: ImageLink.fifth) { [weak self] data in
-            DispatchQueue.main.async {
-                self?.imageView5.image = UIImage(data: data)
+        queue.addOperation {
+            self.imageLoader.load(with: ImageLink.fifth) { [weak self] data in
+                DispatchQueue.main.async {
+                    self?.imageView5.image = UIImage(data: data)
+                }
             }
-            self?.group.leave()
-//            self?.isLoadSuccess5 = true
-//            self?.checkAllLoadDidEnd()
         }
     }
     

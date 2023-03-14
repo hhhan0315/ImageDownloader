@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC58015D29C038E9002EC11D /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC58015C29C038E9002EC11D /* ImageDownloadOperation.swift */; };
 		DC6FEAA729B1C8AF007A0461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEAA629B1C8AF007A0461 /* AppDelegate.swift */; };
 		DC6FEAA929B1C8AF007A0461 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEAA829B1C8AF007A0461 /* SceneDelegate.swift */; };
 		DC6FEAAB29B1C8AF007A0461 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEAAA29B1C8AF007A0461 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC58015C29C038E9002EC11D /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		DC6FEAA329B1C8AF007A0461 /* ImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6FEAA629B1C8AF007A0461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC6FEAA829B1C8AF007A0461 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				DC6FEABA29B1CD6E007A0461 /* ImageLoader.swift */,
 				DC6FEAA829B1C8AF007A0461 /* SceneDelegate.swift */,
 				DC6FEAAA29B1C8AF007A0461 /* ViewController.swift */,
+				DC58015C29C038E9002EC11D /* ImageDownloadOperation.swift */,
 				DC6FEAAF29B1C8B1007A0461 /* Assets.xcassets */,
 				DC6FEAB129B1C8B1007A0461 /* LaunchScreen.storyboard */,
 				DC6FEAAC29B1C8AF007A0461 /* Main.storyboard */,
@@ -149,6 +152,7 @@
 				DC6FEAA729B1C8AF007A0461 /* AppDelegate.swift in Sources */,
 				DC6FEABB29B1CD6E007A0461 /* ImageLoader.swift in Sources */,
 				DC6FEAA929B1C8AF007A0461 /* SceneDelegate.swift in Sources */,
+				DC58015D29C038E9002EC11D /* ImageDownloadOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
