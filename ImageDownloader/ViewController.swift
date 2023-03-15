@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     private let imageLoader = ImageLoader()
     
     let queue = OperationQueue()
+    let completionOperation = Operation()
+    
     let imageLinks: [String] = [ImageLink.first, ImageLink.second, ImageLink.third, ImageLink.fourth, ImageLink.fifth]
     lazy var imageViews: [UIImageView] = [imageView1, imageView2, imageView3, imageView4, imageView5]
     
@@ -47,23 +49,38 @@ class ViewController: UIViewController {
 //        loadButton4.sendActions(for: .touchUpInside)
 //        loadButton5.sendActions(for: .touchUpInside)
         
+        queue.maxConcurrentOperationCount = 1
+        
         for (index, imageLink) in imageLinks.enumerated() {
             let operation = ImageDownloadOperation(session: URLSession.shared, urlString: imageLink) { data, response, error in
                 guard let data = data else {
                     return
                 }
                 let imageView = self.imageViews[index]
+                let random = Int.random(in: 1...2)
+                sleep(UInt32(random))
                 DispatchQueue.main.async {
                     imageView.image = UIImage(data: data)
                 }
             }
             queue.addOperation(operation)
             
-//            operation.addDependency(<#T##op: Operation##Operation#>)
             operation.completionBlock = {
                 print("\(index)번째 이미지 로딩 완료")
             }
+            
+            completionOperation.addDependency(operation)
         }
+        
+        completionOperation.completionBlock = {
+            print("모두 종료")
+            DispatchQueue.main.async {
+                self.allLoadButton.isEnabled = true
+            }
+        }
+        
+//        queue.addOperation(completionOperation)
+        OperationQueue.main.addOperation(completionOperation)
     }
     
     @IBAction func loadImageView1(_ sender: UIButton) {
@@ -73,7 +90,7 @@ class ViewController: UIViewController {
                     self?.imageView1.image = UIImage(data: data)
                 }
             }
-        }
+        }        
     }
     
     @IBAction func loadImageView2(_ sender: UIButton) {
