@@ -14,8 +14,7 @@
 		DC6FEAAE29B1C8AF007A0461 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6FEAAC29B1C8AF007A0461 /* Main.storyboard */; };
 		DC6FEAB029B1C8B1007A0461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6FEAAF29B1C8B1007A0461 /* Assets.xcassets */; };
 		DC6FEAB329B1C8B1007A0461 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6FEAB129B1C8B1007A0461 /* LaunchScreen.storyboard */; };
-		DC6FEABB29B1CD6E007A0461 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEABA29B1CD6E007A0461 /* ImageLoader.swift */; };
-		DC6FEABD29B1D3C0007A0461 /* ImageLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEABC29B1D3C0007A0461 /* ImageLink.swift */; };
+		DC6FEABD29B1D3C0007A0461 /* ImageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FEABC29B1D3C0007A0461 /* ImageLinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +27,7 @@
 		DC6FEAAF29B1C8B1007A0461 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6FEAB229B1C8B1007A0461 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6FEAB429B1C8B1007A0461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC6FEABA29B1CD6E007A0461 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		DC6FEABC29B1D3C0007A0461 /* ImageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLink.swift; sourceTree = "<group>"; };
+		DC6FEABC29B1D3C0007A0461 /* ImageLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLinks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +62,8 @@
 			children = (
 				DC6FEAB429B1C8B1007A0461 /* Info.plist */,
 				DC6FEAA629B1C8AF007A0461 /* AppDelegate.swift */,
-				DC6FEABC29B1D3C0007A0461 /* ImageLink.swift */,
-				DC6FEABA29B1CD6E007A0461 /* ImageLoader.swift */,
 				DC6FEAA829B1C8AF007A0461 /* SceneDelegate.swift */,
+				DC6FEABC29B1D3C0007A0461 /* ImageLinks.swift */,
 				DC6FEAAA29B1C8AF007A0461 /* ViewController.swift */,
 				DC58015C29C038E9002EC11D /* ImageDownloadOperation.swift */,
 				DC6FEAAF29B1C8B1007A0461 /* Assets.xcassets */,
@@ -147,10 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6FEABD29B1D3C0007A0461 /* ImageLink.swift in Sources */,
+				DC6FEABD29B1D3C0007A0461 /* ImageLinks.swift in Sources */,
 				DC6FEAAB29B1C8AF007A0461 /* ViewController.swift in Sources */,
 				DC6FEAA729B1C8AF007A0461 /* AppDelegate.swift in Sources */,
-				DC6FEABB29B1CD6E007A0461 /* ImageLoader.swift in Sources */,
 				DC6FEAA929B1C8AF007A0461 /* SceneDelegate.swift in Sources */,
 				DC58015D29C038E9002EC11D /* ImageDownloadOperation.swift in Sources */,
 			);
