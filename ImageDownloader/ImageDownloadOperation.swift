@@ -24,15 +24,13 @@ class ImageDownloadOperation: Operation {
         let urlRequest = URLRequest(url: url)
         self.task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             if let completionHandler = completionHandler {
-                
                 completionHandler(data, response, error)
             }
         })
     }
     
     override func main() {
-//        super.main()
-        let random = Int.random(in: 1...2)
+        let random = Int.random(in: 1...3)
         sleep(UInt32(random))
         self.task.resume()
     }

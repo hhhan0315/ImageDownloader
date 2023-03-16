@@ -43,22 +43,12 @@ class ViewController: UIViewController {
         
         allLoadButton.isEnabled = false
         
-//        loadButton1.sendActions(for: .touchUpInside)
-//        loadButton2.sendActions(for: .touchUpInside)
-//        loadButton3.sendActions(for: .touchUpInside)
-//        loadButton4.sendActions(for: .touchUpInside)
-//        loadButton5.sendActions(for: .touchUpInside)
-        
-//        queue.maxConcurrentOperationCount = 1
-        
         for (index, imageLink) in imageLinks.enumerated() {
             let operation = ImageDownloadOperation(session: URLSession.shared, urlString: imageLink) { data, response, error in
                 guard let data = data else {
                     return
                 }
                 let imageView = self.imageViews[index]
-//                let random = Int.random(in: 1...2)
-//                sleep(UInt32(random))
                 DispatchQueue.main.async {
                     imageView.image = UIImage(data: data)
                 }
@@ -80,7 +70,6 @@ class ViewController: UIViewController {
         }
         
         queue.addOperation(completionOperation)
-//        OperationQueue.main.addOperation(completionOperation)
     }
     
     @IBAction func loadImageView1(_ sender: UIButton) {
