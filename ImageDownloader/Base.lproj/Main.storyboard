@@ -141,34 +141,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ew-U5-rI3">
-                                <rect key="frame" x="16" y="519" width="343" height="34.333333333333371"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Load All Images">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="loadAllImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zKZ-PW-meg"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-9g-y7J">
+                                <rect key="frame" x="20" y="523" width="335" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zgL-yi-Alp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="926-MA-Plq"/>
                             <constraint firstAttribute="trailing" secondItem="bx5-K7-fTd" secondAttribute="trailing" constant="16" id="Ci0-L7-2if"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ew-U5-rI3" secondAttribute="trailing" constant="16" id="D63-oX-i4P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dr0-9g-y7J" secondAttribute="trailing" constant="20" id="L1p-Gm-HJG"/>
+                            <constraint firstItem="Dr0-9g-y7J" firstAttribute="top" secondItem="zgL-yi-Alp" secondAttribute="bottom" constant="20" id="OJG-sK-Lu3"/>
                             <constraint firstItem="zgL-yi-Alp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pev-yd-Ejy"/>
                             <constraint firstItem="bx5-K7-fTd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="di0-uV-yzD"/>
-                            <constraint firstItem="9Ew-U5-rI3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jte-wO-Xax"/>
-                            <constraint firstItem="9Ew-U5-rI3" firstAttribute="top" secondItem="bx5-K7-fTd" secondAttribute="bottom" constant="16" id="nuG-og-gLH"/>
+                            <constraint firstItem="Dr0-9g-y7J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pWP-xU-Pz9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="allLoadButton" destination="9Ew-U5-rI3" id="uRq-xA-Axt"/>
+                        <outlet property="allLoadLabel" destination="Dr0-9g-y7J" id="TJy-Ak-Umg"/>
                         <outlet property="imageView1" destination="2m9-8d-4p1" id="T0d-ug-D20"/>
                         <outlet property="imageView2" destination="rNA-LY-CHb" id="lMF-XL-bTA"/>
                         <outlet property="imageView3" destination="g2O-u0-Iof" id="cHn-pL-N4D"/>

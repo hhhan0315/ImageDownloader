@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadButton3: UIButton!
     @IBOutlet weak var loadButton4: UIButton!
     @IBOutlet weak var loadButton5: UIButton!
-    @IBOutlet weak var allLoadButton: UIButton!
+    
+    @IBOutlet weak var allLoadLabel: UILabel!
+    
     
     var isLoadSuccess1: Bool = false
     var isLoadSuccess2: Bool = false
@@ -41,7 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        allLoadButton.isEnabled = false
+//        allLoadButton.isEnabled = false
         
         for (index, imageLink) in imageLinks.enumerated() {
             let operation = ImageDownloadOperation(session: URLSession.shared, urlString: imageLink) { data, response, error in
@@ -65,7 +67,7 @@ class ViewController: UIViewController {
         completionOperation.completionBlock = {
             print("모두 종료")
             DispatchQueue.main.async {
-                self.allLoadButton.isEnabled = true
+                self.allLoadLabel.text = "Load Success!!!"
             }
         }
         
@@ -136,7 +138,7 @@ class ViewController: UIViewController {
         let array = [isLoadSuccess1, isLoadSuccess2, isLoadSuccess3, isLoadSuccess4, isLoadSuccess5]
         if array.filter({ $0 == true }).count == array.count {
             DispatchQueue.main.async {
-                self.allLoadButton.isEnabled = true
+                self.allLoadLabel.text = "Load Success!!"
             }
         }
     }
